@@ -19,16 +19,22 @@ public class Main {
      */
     public static void main(String[] args) {
         ServicioPersona sp = new ServicioPersona();
-        Persona p1 = sp.crearPersona();
-        System.out.println(p1.toString());
-        System.out.print(p1.getNombre() + " es mayor de edad: "  +"\n"+ sp.calcularIMC(p1) +"\n"+ sp.esMayorDeEdad(p1));
-        System.out.println("");
-        System.out.println("--------------------------------------------------");  
-        Persona p2 = sp.crearPersona();
-        Persona p3 = sp.crearPersona();
-        Persona p4 = sp.crearPersona();
+        Persona[] vector = new Persona[4];
+        boolean[] mayor = new boolean[4];
+        int[] imc = new int[4];
         
+        for (int i = 0; i < 4; i++) {
+            vector[i] = sp.crearPersona();
+            System.out.println(vector[i].toString());
+            System.out.println(vector[i].getNombre() + " es mayor de edad: " + sp.esMayorDeEdad(vector[i]));
+            mayor[i] = sp.esMayorDeEdad(vector[i]);
+            imc[i] = sp.calcularIMC(vector[i]);
+            System.out.println("--------------------------------------------------");
+        }
         
+        sp.porcentajeIMC(imc);
+        sp.porcentajeMayor(mayor);
+
     }
     
 }

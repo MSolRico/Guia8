@@ -1,21 +1,21 @@
-package Ejercicio3.Servicios;
+package Ejercicio3.Servicio;
 
-import Ejercicio3.Entidades.Persona;
+import Ejercicio3.Entidades.PersonaDamian;
 import java.util.Scanner;
 
-public class ServicioPersona {
+public class ServicioPersonaDamian {
 
     //Atributos 
     Scanner entry = new Scanner(System.in).useDelimiter("\n");
 
     //---------- Metodos -------------
     //Metodo A
-    public boolean esMayorDeEdad(Persona persona) {
+    public boolean esMayorDeEdad(PersonaDamian persona) {
         return persona.getEdad() >= 18;
     }
 
     //Metodo B
-    public Persona crearPersona() {
+    public PersonaDamian crearPersona() {
         System.out.println("Ingrese su nombre");
         String nombre = entry.nextLine();
         System.out.println("Ingrese su edad");
@@ -36,11 +36,11 @@ public class ServicioPersona {
         double peso = entry.nextDouble();
         System.out.println("Ingrese su altura en metros");
         double altura = entry.nextDouble();
-        return new Persona(nombre, edad, genero.charAt(0), peso, altura);
+        return new PersonaDamian(nombre, edad, genero.charAt(0), peso, altura);
     }
 
     //Metodo C
-    public int calcularIMC(Persona persona) {
+    public int calcularIMC(PersonaDamian persona) {
         double imc = persona.getPeso() / Math.pow(persona.getAltura(), 2);
         if (imc < 20) {
             return -1;
@@ -52,7 +52,7 @@ public class ServicioPersona {
     }
     
     //Metodos auxiliares
-    public int mayoriaDeEdad(Persona persona) {
+    public int mayoriaDeEdad(PersonaDamian persona) {
         if (persona.getEdad() >= 18) {
             return 1;
         } else {
@@ -60,7 +60,7 @@ public class ServicioPersona {
         }
     }
     
-    public String porcentajeImcPesonas(Persona persona) {        
+    public String porcentajeImcPesonas(PersonaDamian persona) {        
         String peso;
         switch (calcularIMC(persona)) {
             case -1:

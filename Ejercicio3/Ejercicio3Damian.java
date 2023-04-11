@@ -1,17 +1,17 @@
 package Ejercicio3;
 
-import Ejercicio3.Entidades.Persona;
-import Ejercicio3.Servicios.ServicioPersona;
+import Ejercicio3.Entidades.PersonaDamian;
+import Ejercicio3.Servicio.ServicioPersonaDamian;
 
-public class Ejercicio3 {
+public class Ejercicio3Damian {
 
     public static void main(String[] args) {
-        ServicioPersona sp = new ServicioPersona();
+        ServicioPersonaDamian sp = new ServicioPersonaDamian();
 //        Persona persona1 = sp.crearPersona();
-        Persona persona1 = new Persona("Pepe", 50, "M".charAt(0), 30, 1.65);
-        Persona persona2 = new Persona("Pepa", 25, "F".charAt(0), 70, 1.55);
-        Persona persona3 = new Persona("Montoto", 40, "M".charAt(0), 100, 1.80);
-        Persona persona4 = new Persona("Montota", 65, "F".charAt(0), 60, 1.60);
+        PersonaDamian persona1 = new PersonaDamian("Pepe", 50, "M".charAt(0), 30, 1.65);
+        PersonaDamian persona2 = new PersonaDamian("Pepa", 25, "F".charAt(0), 70, 1.55);
+        PersonaDamian persona3 = new PersonaDamian("Montoto", 40, "M".charAt(0), 100, 1.80);
+        PersonaDamian persona4 = new PersonaDamian("Montota", 65, "F".charAt(0), 60, 1.60);
 //        System.out.println(examinarPersona(persona1));
 //        System.out.println(examinarPersona(persona2));
 //        System.out.println(examinarPersona(persona3));
@@ -63,8 +63,8 @@ public class Ejercicio3 {
         System.out.println("La cantidad de personas con sobrepesp es del: " + sobrepeso + " %");
     }
 
-    public static String examinarPersona(Persona persona) {
-        ServicioPersona sp = new ServicioPersona();
+    public static String examinarPersona(PersonaDamian persona) {
+        ServicioPersonaDamian sp = new ServicioPersonaDamian();
         String mayoria, peso;
         if (persona.getEdad() >= 18) {
             mayoria = "es mayor de edad";

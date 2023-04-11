@@ -69,7 +69,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona" + "\nnombre = " + nombre + ", \nedad = " + edad + ", \nsexo = " + sexo + ", \npeso = " + peso + ", \naltura = " + altura ;
+        return "Nombre = " + nombre + ", \nedad = " + edad + ", \nsexo = " + sexo + ", \npeso = " + peso + ", \naltura = " + altura ;
     }
     
     

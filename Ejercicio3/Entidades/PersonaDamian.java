@@ -1,6 +1,6 @@
 package Ejercicio3.Entidades;
 
-public class Persona {
+public class PersonaDamian {
     //Atributos
     private String nombre;
     private int edad;
@@ -9,10 +9,10 @@ public class Persona {
     private double altura;
 
     //Constructores
-    public Persona() {
+    public PersonaDamian() {
     }
 
-    public Persona(String nombre, int edad, Character sexo, double peso, double altura) {
+    public PersonaDamian(String nombre, int edad, Character sexo, double peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
         this.genero = sexo;

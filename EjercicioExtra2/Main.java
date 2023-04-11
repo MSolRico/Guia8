@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package EjercicioExtra1;
+package EjercicioExtra2;
 
-import EjercicioExtra1.Entidad.Raices;
-import EjercicioExtra1.Servicios.RaicesServicios;
+import EjercicioExtra2.Entidades.NIF;
+import EjercicioExtra2.Servicio.NIFService;
+
 
 /**
  *
@@ -18,12 +19,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        Raices r1 = new Raices(-2, -4, -10);
-//        Raices r1 = new Raices(-2, -8, 10);
-//        Raices r1 = new Raices(-4, 12,-9);
-        RaicesServicios rs = new RaicesServicios();
-        rs.calcular(r1);
-
+        NIFService ns = new NIFService();
+        NIF n1 = ns.crearNif();
+        ns.mostrar(n1);
+        
     }
+    
 }

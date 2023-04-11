@@ -16,7 +16,7 @@ public class CuentaBancariaServicios {
 
     Scanner read = new Scanner(System.in).useDelimiter("\n");
 
-    public CuentaBancaria crearCuenta() {
+    public CuentaBancaria crearCuenta(CuentaBancaria c1) {
         
         System.out.println("Ingrese numero de cuenta");
         int numeroCuenta = read.nextInt();
@@ -29,7 +29,7 @@ public class CuentaBancariaServicios {
         return new CuentaBancaria(numeroCuenta, dniCliente, saldoActual);
     } 
 
-    public CuentaBancaria ingresar(CuentaBancaria c1) {
+    public double ingresar(CuentaBancaria c1) {
         
         System.out.println("Dinero que desea ingresar");
         double saldo = (Math.random() * (500000000 - 100) + 100);
@@ -43,21 +43,53 @@ public class CuentaBancariaServicios {
         c1.setSaldoActual(saldo);
                 
         System.out.println("Saldo actualizado " + c1.getSaldoActual());
+    
+        return c1.getSaldoActual();
     }
 
-    public double retirar() {
+    public double retirar(CuentaBancaria c1) {
+        
+        System.out.println("Dinero que desea retirar");
+        double saldo = (Math.random() * (500000000 - 100) + 100);
+        double resta;
+        
+        System.out.println("Saldo disponible: " + c1.getSaldoActual());
+        
+        System.out.println("Saldo a retirar: " + saldo);
+        
+        if (saldo<c1.getSaldoActual()){
+            c1.setSaldoActual(0);
+        } else {
+            resta = c1.getSaldoActual() - saldo;
+            c1.setSaldoActual(resta);
+        }
+                                
+        System.out.println("Saldo actualizado: " + c1.getSaldoActual());
+    
+        return c1.getSaldoActual();
+    }
+
+    public double extraccionRapida(CuentaBancaria c1) {
+        System.out.println("Saldo máximo que puede retirar:" + 0.2*c1.getSaldoActual());
+        double saldo = (Math.random() * (500000000 - 100) + 100);
+        double resta;
+        if (saldo>0.2*c1.getSaldoActual()){
+            System.out.println("Es mayor al valor permitido");
+        } else { 
+            resta = c1.getSaldoActual() - saldo;
+            c1.setSaldoActual(resta);
+        }
+                                
+        System.out.println("Saldo actualizado: " + c1.getSaldoActual());
+    
+        return c1.getSaldoActual();
+    }
+
+    public double consultarSaldo(CuentaBancaria c1) {
         return 0;
     }
 
-    public double extraccionRapida() {
-        return 0;
-    }
-
-    public double consultarSaldo() {
-        return 0;
-    }
-
-    public void consultarDatos() {
+    public void consultarDatos(CuentaBancaria c1) {
 
     }
 }
